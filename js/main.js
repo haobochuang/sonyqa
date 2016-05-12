@@ -46,7 +46,7 @@ function AJAX_get_json(){
 
 
 //show questions
-function creatQuestion(){
+function createQuestion(){
   var i;
   var idname;
   //reset the proceed
@@ -74,7 +74,7 @@ function creatQuestion(){
 function questionPageAnimation(){
   $('#questionPage').hide();
   questionNumber++;
-  creatQuestion();
+  createQuestion();
   $('.selections').css('background-color','#fff');
   $('#questionPage').show();
 }
