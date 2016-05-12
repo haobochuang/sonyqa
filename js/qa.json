@@ -1,0 +1,32 @@
+{
+    "question1":{
+      {"questionText":"how many legs do 4 chicken have?"},
+      {"selectiontexts":{
+        "s1":2,
+        "s2":8,
+        "s3":5,
+        "s4":3
+      }},
+      {"answer":2}
+    },
+    "question2":{
+      {"questionText":"how many legs do 3 pigs have?"},
+      {"selectiontexts":{
+        "s1":8,
+        "s2":6,
+        "s3":12,
+        "s4":4
+      }},
+      {"answer":3}
+    },
+    "question3":{
+      {"questionText":"how many legs do 5 snakes have?"},
+      {"selectiontexts":{
+        "s1":1,
+        "s2":2,
+        "s3":3,
+        "s4":0
+      }},
+      {"answer":4}
+    }
+}

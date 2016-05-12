@@ -1,0 +1,34 @@
+{
+  "sonyqa": [
+    [
+      {"questionTitle":"how many legs do 4 chicken have?"},
+      {"selections":[
+        2,
+        8,
+        5,
+        3
+      ]},
+      {"answer":2}
+    ],
+    [
+      {"questionTitle":"how many legs do 3 pigs have?"},
+      {"selections":[
+        8,
+        6,
+        12,
+        4
+      ]},
+      {"answer":3}
+    ],
+    [
+      {"questionTitle":"how many legs do 5 snakes have?"},
+      {"selections":[
+        1,
+        2,
+        3,
+        0
+      ]},
+      {"answer":4}
+    ]
+  ]
+}
