@@ -17,15 +17,16 @@
         <!--<![endif]-->
     </head>
     <body>
-      <div class="main">
+      <div class="main fade-in">
         <div class="title">SONY Q&A</div>
         <div class="content">
-          <div class="questions">
+          <div id ="questionPage" class="fade-in slow">
+            <div id=jsonready></div>
             <div id="questionTitles"></div>
-            <div id="selection1"></div>
-            <div id="selection2"></div>
-            <div id="selection3"></div>
-            <div id="selection4"></div>
+            <div id="selection1" class="selections"></div>
+            <div id="selection2" class="selections"></div>
+            <div id="selection3" class="selections"></div>
+            <div id="selection4" class="selections"></div>
             <div id="proceed"></div>
 
           </div>
@@ -34,5 +35,5 @@
 
     </body>
     <script src="zepto.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </html>

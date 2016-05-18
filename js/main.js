@@ -27,7 +27,41 @@ var selectionobj4 = ["2","5","6","0"];
 var questionObj4 = {questionText:"How many tails do 3 person have?",selectiontexts:selectionobj4,answer:4};
 var AllquestionObjs = [questionObj1,questionObj2,questionObj3,questionObj4];
 
-//create JSON data
+//create JSON data for test
+var AllJSONdata =
+'{"Allquestions":['+
+    '{"name":"name1","age":17},'+
+    '{"name":"name2","age":20},'+
+    '{"name":"name3","age":21}]}';
+
+var AllJSONobj = JSON.parse(AllJSONdata);
+console.log("JSON data is "+AllJSONobj.Allquestions[0].name);
+
+
+//using ajax to get JSON data
+/*
+$.ajax({
+       url: "js/qa.json",
+           //force to handle it as text
+       dataType: "text",
+            success: function (dataTest) {
+
+                //data downloaded so we call parseJSON function
+                //and pass downloaded data
+                var json = $.parseJSON(dataTest);
+                //now json variable contains data in json format
+                //let's display a few items
+                $.each(json, function (i, jsonObjectList) {
+                for (var index = 0; index < jsonObjectList.listValue_.length;index++) {
+                      alert(jsonObjectList.listKey_[index][0] + " -- " + jsonObjectList.listValue_[index].description_);
+                      }
+                 });
+
+
+             }
+  });
+*/
+
 /*
 function AJAX_get_json(){
   var hr = new XMLHttpRequest();
@@ -52,23 +86,22 @@ function createQuestion(){
   //reset the proceed
   $('#proceed').html("");
   //document.getElementById("questionTitles").innerHTML = questionObj.questionText;
-  $('#questionTitles').html(AllquestionObjs[questionNumber].questionText);
+  $('#questionTitles').html((questionNumber+1)+". "+AllquestionObjs[questionNumber].questionText);
   for(i = 1; i<=4; i++){
     idname = "selection"+ i;
     document.getElementById(idname).innerHTML =
     "<div id=selection"+ i +" class=selectionClass> ("+i+") "+ AllquestionObjs[questionNumber].selectiontexts[i-1] +"</div>";
   }
-  $('#selection1').on('click', checkAnswer);
-  $('#selection2').on('click', checkAnswer);
-  $('#selection3').on('click', checkAnswer);
-  $('#selection4').on('click', checkAnswer);
+
+  //add eventhandler
+  $('.selections').on('click', checkAnswer);
 
   $('.selections').on('mouseover',function(){
     $('#'+event.target.id).css('background-color','#aaf');
-  })
+  });
   $('.selections').on('mouseout',function(){
     $('#'+event.target.id).css('background-color','#fff');
-  })
+  });
 }
 
 function questionPageAnimation(){
