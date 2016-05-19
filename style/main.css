@@ -30,6 +30,24 @@ body{
   padding-left: 15px;
   padding-right: 15px;
 }
+
+#start{
+  width: 60%;
+  margin:auto;
+  text-align: center;
+}
+
+#startButton{
+  margin: auto;
+  width: 80px;
+  text-align: center;
+  font-size: 30px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #aaa;
+}
+
 #questionPage{
   max-width: 500px;
 }
@@ -40,7 +58,7 @@ body{
 .ItalicFont{
   font-style:italic;
 }
-.selections{
+.selectionClass{
   border-radius:5px;
   padding-left: 3px;
   padding-top: 3px;
@@ -70,7 +88,7 @@ body{
     animation-duration:0.3s;
 }
 
-.fade-in.slow {
+.fade-in .slow {
   -webkit-animation-duration:1s;
   -moz-animation-duration:1s;
   animation-duration:1s;

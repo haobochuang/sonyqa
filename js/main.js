@@ -84,28 +84,42 @@ function createQuestion(){
   var i;
   var idname;
   //reset the proceed
-  $('#proceed').html("");
+//  $('#proceed').html("");
   //document.getElementById("questionTitles").innerHTML = questionObj.questionText;
   $('#questionTitles').html((questionNumber+1)+". "+AllquestionObjs[questionNumber].questionText);
   for(i = 1; i<=4; i++){
     idname = "selection"+ i;
     document.getElementById(idname).innerHTML =
-    "<div id=selection"+ i +" class=selectionClass> ("+i+") "+ AllquestionObjs[questionNumber].selectiontexts[i-1] +"</div>";
+    i+". "+AllquestionObjs[questionNumber].selectiontexts[i-1];
+    //"<div id=selection"+ i +" class=selectionClass> ("+i+") "+ AllquestionObjs[questionNumber].selectiontexts[i-1] +"</div>";
   }
 
-  //add eventhandler
-  $('.selections').on('click', checkAnswer);
+  //reset hinttext & gotonext item
+  $('#hinttext').html("incorrect, hint:("+AllquestionObjs[questionNumber].answer+")");
+  $('#hinttext').hide();
 
-  $('.selections').on('mouseover',function(){
+  $('#gotonext').off();
+  $('#gotonext').hide();
+
+  //add eventhandler
+  $('.selectionClass').on('click', checkAnswer);
+
+  $('.selectionClass').on('mouseover',function(){
     $('#'+event.target.id).css('background-color','#aaf');
   });
-  $('.selections').on('mouseout',function(){
+  $('.selectionClass').on('mouseout',function(){
     $('#'+event.target.id).css('background-color','#fff');
   });
 }
 
 function questionPageAnimation(){
+  if(questionNumber == -1){
+    $('#start').off();
+    $('#start').hide();
+  }
+
   $('#questionPage').hide();
+
   questionNumber++;
   createQuestion();
   $('.selections').css('background-color','#fff');
@@ -114,28 +128,36 @@ function questionPageAnimation(){
 
 //show result when user click any selection
 function checkAnswer(){
-  $('.selections').css('background-color','#fff');
+  $('.selectionClass').css('background-color','#fff');
   $('#'+event.target.id).css('background-color','#aaa'); //set selected color.
   //console.log(event.target.id);
   if(event.target.id == ("selection"+AllquestionObjs[questionNumber].answer)){
+    //hide hint
+    $('#hinttext').hide();
+
     //$('#proceed').html("<button id=correct>correct, next to...</button>");
     //remove eventhandler
-    $('.selections').off();
+    $('.selectionClass').off();
     if(questionNumber==AllquestionObjs.length-1){
-      $('#proceed').html("<div class=\"fade-in blue\">Correct! All questions are completed.</div>");
+      console.log("id:"+event.target.id);
+      //$('#proceed').html("<div id=next class=\"fade-in blue\">Correct! All questions are completed.</div>");
+      $('#gotonext').html("Correct! All questions are completed.");
+      $('#gotonext').show();
     }
     else{
-      $('#proceed').html("<button id=next class=fade-in>correct, go to next.</button>");
-      $('#next').on('click', questionPageAnimation);
+      //$('#proceed').html("<button id=next class=fade-in>correct, go to next.</button>");
+      $('#gotonext').html("correct, go to question:"+(questionNumber+2));
+      $('#gotonext').show();
+      $('#gotonext').on('click', questionPageAnimation);
     }
   }
   else{
-    //$('#proceed').html("hint, answer is "+questionObj.answer+".");
-    $('#proceed').html("<div class=fade-in style=color:red;>incorrect, hint:("+AllquestionObjs[questionNumber].answer+")</div>");
+    //$('#proceed').html("<div class=fade-in style=color:red;>incorrect, hint:("+AllquestionObjs[questionNumber].answer+")</div>");
+    $('#hinttext').show();
+    $('#gotonext').hide();
   }
-  //document.getElementById("proceed").innerHTML = obj.id;
 }
 
 //process
 //AJAX_get_json();
-questionPageAnimation();
+$('#start').on('click', questionPageAnimation);
