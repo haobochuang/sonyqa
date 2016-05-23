@@ -85,7 +85,7 @@ html, body{
   height: 90%;
 }
 .questionTitles{
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 5px;
 }
 
@@ -113,14 +113,14 @@ html, body{
   border-top: 0px;
   border-bottom: 1px solid white;
   padding-bottom: 5px;
-  font-size: 24px;
+  font-size: 20px;
   height: 33%;
   text-align: center;
 }
 
 .progressBar{
   position: relative;
-  bottom:50px;
+  bottom:25px;
   color: white;
   margin:auto;
   width: 80%;
@@ -195,11 +195,4 @@ html, body{
   -webkit-animation-duration:1s;
   -moz-animation-duration:1s;
   animation-duration:1s;
-}
-
-.green{
-  color:green;
-}
-.blue{
-  color:blue;
 }
