@@ -18,22 +18,52 @@
     </head>
     <body>
       <div class="main fade-in">
-        <div class="title">SONY Q&A</div>
-        <div class="content">
-          <div id="start"><div id="startButton">start</div></div>
-          <div id ="questionPage" class="fade-in slow">
-            <div id=jsonready></div>
+
+        <div class="loginPage fade-in">
+          <div class="logo"></div>
+          <div class="welcomeText">
+            恭喜您已完成 Xperia X 最新的功能體驗 <br>
+            請您填寫以下資料然後完成問卷 <br>
+            就有機會能在第二階段抽中大獎哦！
+          </div>
+          <div class="loginblock">
+            <input id="usename" class="logininput" value="姓名 Name">
+            <input id="userphoneNum" class="logininput" value="手機 Phone Number">
+            <button class="enterContent blackbutton">進入問卷</button>
+          </div>
+        </div>
+
+        <div class="contentPage fade-in">
+          <div class ="questionblock" class="fade-in slow">
             <div id="questionTitles"></div>
-            <div id="selection1" class="selectionClass"></div>
-            <div id="selection2" class="selectionClass"></div>
-            <div id="selection3" class="selectionClass"></div>
-            <div id="selection4" class="selectionClass"></div>
-            <div id="proceed">
-              <div id="hinttext" class="fade-in"></div>
-              <div id="gotonext" class="fade-in blue"></div>
+            <div class="hinttext fade-in"></div>
+            <div class="selectionblock pure-g">
+            <button id="selection1" class="selectionClass pure-u-1-1"></button>
+            <button id="selection2" class="selectionClass pure-u-1-1"></button>
+            <button id="selection3" class="selectionClass pure-u-1-1"></button>
+            <button id="selection4" class="selectionClass pure-u-1-1"></button>
+            <button id="selection5" class="selectionClass pure-u-1-1"></button>
+            <button id="selection6" class="selectionClass pure-u-1-1"></button>
             </div>
           </div>
+          <div class="progressBar">
+            <div class="progressBarTitle">總體問卷完成度</div>
+            <div class="progressPercentage">0%</div>
+            <br>
+            <div class="barbackground">
+            <div class="barPercentage"></div>
+            </div>
+          </div>
+          <div>
+        </div>
+    </div>
+    <div class="exitPage fade-in">
+      <div class="exitText">
+        <h1>Congratulation!</h1>
+        <br>
+        謝謝您的積極參與 祝您在第二階段能獲得大獎哦！
       </div>
+      <button class="exitTest blackbutton">離開</button>
     </div>
 
     </body>
