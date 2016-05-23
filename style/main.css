@@ -84,7 +84,7 @@ html, body{
   width: 80%;
   height: 90%;
 }
-#questionTitles{
+.questionTitles{
   font-size: 20px;
   margin-bottom: 5px;
 }
@@ -105,7 +105,7 @@ html, body{
 .selectionblock{
   margin: 20px;
 }
-.selectionClass{
+.qOptions{
   margin-top: 15px;
   margin-bottom: 15px;
   border-left: 0px;
@@ -117,16 +117,11 @@ html, body{
   height: 33%;
   text-align: center;
 }
-#proceed{
-  height: 30px;
-  padding-top: 10px;
-}
 
 .progressBar{
   position: relative;
-  bottom:10px;
+  bottom:50px;
   color: white;
-  bottom: 20px;
   margin:auto;
   width: 80%;
 }
